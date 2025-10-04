@@ -70,10 +70,13 @@ namespace DesafioFundamentos.Models
 
                     Console.WriteLine($"O veículo com a {placa} foi removido e o preço total foi de: R$ {valorTotal}");
                 }
-                catch (System.Exception)
+                catch (FormatException)
                 {
-                    Console.WriteLine("Ocorreu um erro ao tentar remover o veículo. Tente novamente.");
-                    throw;
+                    Console.WriteLine("Entrada inválida. Por favor, digite um número inteiro para as horas.");
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("O número de horas informado é muito grande. Por favor, digite um valor menor.");
                 }
                
                
